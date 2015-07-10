@@ -31,7 +31,7 @@ public class OffersDAO {
 		params.addValue("id", "3");
 		params.addValue("name", "Mike");
 
-		return jdbc.query("SELECT * FROM offers where name = :name && id = :id", new RowMapper<Offer>() {
+		return jdbc.query("SELECT * FROM offers where name = :name && id = :id",params, new RowMapper<Offer>() {
 
 			public Offer mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Offer offer = new Offer();
