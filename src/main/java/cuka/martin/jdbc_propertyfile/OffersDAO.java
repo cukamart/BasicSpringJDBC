@@ -20,6 +20,7 @@ public class OffersDAO {
 
 	// vrati vsetky riadky z tabulky, ktore vyhovuju podmienkam dotazu -> metoda
 	// query()
+	// tento setter prepojuje dataSource bean s teamto "offersDao beanom..."
 	@Autowired
 	public void setDataSource(DataSource jdbc) {
 		this.jdbc = new NamedParameterJdbcTemplate(jdbc);
