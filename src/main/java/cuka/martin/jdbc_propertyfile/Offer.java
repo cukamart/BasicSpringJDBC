@@ -18,7 +18,7 @@ public class Offer {
 		this.text = text;
 	}
 	
-	// tento konstruktor je vygenerovany eclipsom momentalne nema vyuzitie...
+	// tento konstruktor sa pouziva pre update (tam vytvorime Offer aj s ID a potom na zaklade ID menime ostatne atributy)
 	public Offer(int id, String name, String email, String text){
 		this.id = id;
 		this.name = name;
