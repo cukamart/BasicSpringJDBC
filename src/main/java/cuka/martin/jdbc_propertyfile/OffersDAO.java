@@ -64,7 +64,13 @@ public class OffersDAO {
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
 		
 		return jdbc.update("insert into offers (name, text, email) values (:name, :text, :email)", params) == 1;
-		return true;
+	}
+	
+	public boolean update(Offer offer){
+		
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
+		
+		return jdbc.update("update offers set name=:name, text=:text, email=:email where id=:id, params) == 1;
 	}
 
 	// vrati specificky jeden riadok z tabulky cez metodu queryForObject
