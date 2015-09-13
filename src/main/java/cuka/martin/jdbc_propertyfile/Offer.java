@@ -6,6 +6,25 @@ public class Offer {
 	private String name;
 	private String email;
 	private String text;
+	
+	public Offer(){
+		
+	}
+	
+	// konstruktor potrebny pre OfferDao.create(...) - ID netreba do automaticky generuje MySQL
+	public Offer(String name, String email, String text){
+		this.name = name;
+		this.email = email;
+		this.text = text;
+	}
+	
+	// tento konstruktor je vygenerovany eclipsom momentalne nema vyuzitie...
+	public Offer(int id, String name, String email, String text){
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.text = text;
+	}
 
 	public int getId() {
 		return id;
