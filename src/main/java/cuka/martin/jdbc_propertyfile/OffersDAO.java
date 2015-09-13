@@ -51,6 +51,13 @@ public class OffersDAO {
 		});
 
 	}
+	
+	// vrati pocet vymazanych riadkov z databazy (v tomto pripade by to malo byt vzdy 1 ak vymaze)
+	public int delete(int id){
+		
+		MapSqlParameterSource params = new MapSqlParameterSource("id", id);
+		return jdbc.update("delete from offers where id=:id");
+	}
 
 	// vrati specificky jeden riadok z tabulky cez metodu queryForObject
 	public Offer getOffer(int id) {
