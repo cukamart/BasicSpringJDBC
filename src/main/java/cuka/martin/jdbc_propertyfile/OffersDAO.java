@@ -58,6 +58,10 @@ public class OffersDAO {
 		MapSqlParameterSource params = new MapSqlParameterSource("id", id);
 		return jdbc.update("delete from offers where id=:id", params);
 	}
+	
+	public boolean create(Offer offer){
+		return true;
+	}
 
 	// vrati specificky jeden riadok z tabulky cez metodu queryForObject
 	public Offer getOffer(int id) {
