@@ -66,6 +66,16 @@ public class OffersDAO {
 		return jdbc.update("insert into offers (name, text, email) values (:name, :text, :email)", params) == 1;
 	}
 	
+	//Batcg Update -> Prepared Statements, to iste ako create nad tymto ale viackrat prebehne len bude menit :name :text...
+	public int[] create(List<Offer> offers){
+		
+		// vytvori MapSqlParameterSource[] - vsetko spravi automaticky...
+		SqlParameterSource[] batchValues = SqlParameterSourceUtils.createBatch(offers.toArray());
+		
+		// prvy parameter je obycajny insert druhy parameter je MapSqlParameterSource[] pole parametrov...
+		return jdbc.batchUpdate("insert into offers (name, text, email) values (:name, :text, :email)", batchValues);
+	}
+	
 	public boolean update(Offer offer){
 		
 		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
