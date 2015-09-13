@@ -60,6 +60,10 @@ public class OffersDAO {
 	}
 	
 	public boolean create(Offer offer){
+		// beanProperty sa o vsetko postara len tie :name : text atd... sa musia rovnako volat ako atributy v beane (offer)
+		BeanPropertySqlParameterSource params = new BeanPropertySqlParameterSource(offer);
+		
+		return jdbc.update("insert into offers (name, text, email) values (:name, :text, :email)", params) == 1;
 		return true;
 	}
 
