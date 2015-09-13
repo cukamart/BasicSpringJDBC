@@ -25,6 +25,12 @@ public class App {
 			Offer offer1 = new Offer("Dave", "dave@caveofprogramming.com", "Coding Java");
 			Offer offer2 = new Offer("Karen", "karen@caveofprogramming.com", "Software testing for demand");
 			
+			/*List<Offer> offersList = new ArrayList<Offer>();
+			offersList.add(new Offer("Dave", "eq3@gmail.com", "Co ine ako PHP");
+			offersList.add(new Offer("Jack", "jack@azet.com", "Co ine ako PHP a HTML");
+			offersList.add(new Offer("RIP", "jack@gmail.com", "Co ine ako PHP a HTML a CSS");
+			offersDao.create(offersList);*/
+			
 			if (offersDao.create(offer1)){
 				System.out.println("Created offer1 object");
 			}
