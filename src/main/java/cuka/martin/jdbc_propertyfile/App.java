@@ -13,7 +13,14 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("beans/bean.xml");
 
 		OffersDAO offersDao = (OffersDAO) context.getBean("offersDao");
-
+		
+		// editne offer s ID = 90
+		/*Offer offer = new Offer(90, "Claire", "claire@gmail.com", "PHP coding for free");
+		if(offerDao.update(offer)){
+			System.out.println("Object update");
+		} else {
+			System.out.println("Object cannot updated - wrong ID");
+		}*/
 		try {
 			Offer offer1 = new Offer("Dave", "dave@caveofprogramming.com", "Coding Java");
 			Offer offer2 = new Offer("Karen", "karen@caveofprogramming.com", "Software testing for demand");
