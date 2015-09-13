@@ -56,7 +56,7 @@ public class OffersDAO {
 	public int delete(int id){
 		
 		MapSqlParameterSource params = new MapSqlParameterSource("id", id);
-		return jdbc.update("delete from offers where id=:id");
+		return jdbc.update("delete from offers where id=:id", params);
 	}
 
 	// vrati specificky jeden riadok z tabulky cez metodu queryForObject
