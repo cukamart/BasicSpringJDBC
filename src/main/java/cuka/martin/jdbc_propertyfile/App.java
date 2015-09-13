@@ -15,8 +15,8 @@ public class App {
 		OffersDAO offersDao = (OffersDAO) context.getBean("offersDao");
 		
 		// editne offer s ID = 90
-		/*Offer offer = new Offer(90, "Claire", "claire@gmail.com", "PHP coding for free");
-		if(offerDao.update(offer)){
+		/*Offer updateOffer = new Offer(90, "Claire", "claire@gmail.com", "PHP coding for free");
+		if(offerDao.update(updateOffer)){
 			System.out.println("Object update");
 		} else {
 			System.out.println("Object cannot updated - wrong ID");
